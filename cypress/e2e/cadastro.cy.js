@@ -6,41 +6,41 @@ describe('Cadastro',()=>{
         cy.get('a[href="/deliver"]').click()
         cy.get('#page-deliver form h1').should('have.text','Cadastre-se para  fazer entregas')
 
-        var entregador={
-            nome:'Fernando Papito',
+        var deliver={
+            name:'Fernando Papito',
             cpf:'00000014141',
             email:'papito@hotmail.com',
             whatsapp:'11999999999',
-            endereco:{
-                cep:'13031740',
-                rua:'Rua Dois Córregos',
-                numero:'274',
-                complemento:'Casa',
-                bairro:'Jardim Dom Nery',
-                cidade_uf:'Campinas/SP'
+            adress:{
+                postalcode:'13031740',
+                street:'Rua Dois Córregos',
+                number:'274',
+                details:'Casa',
+                district:'Jardim Dom Nery',
+                city_state:'Campinas/SP'
             },
-            metodo_entrega:'Moto',
+            delivery_method:'Moto',
             cnh:'cnh-digital.jpg'
         }
 
-        cy.get('input[name="name"]').type(entregador.nome)
-        cy.get('input[name="cpf"]').type(entregador.cpf)
-        cy.get('input[name="email"]').type(entregador.email)
-        cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
+        cy.get('input[name="name"]').type(deliver.name)
+        cy.get('input[name="cpf"]').type(deliver.cpf)
+        cy.get('input[name="email"]').type(deliver.email)
+        cy.get('input[name="whatsapp"]').type(deliver.whatsapp)
 
-        cy.get('input[name="postalcode"').type(entregador.endereco.cep)
+        cy.get('input[name="postalcode"').type(deliver.adress.postalcode)
         cy.get('input[type=button][value="Buscar CEP"]').click()
 
-        cy.get('input[name="address-number"]').type(entregador.endereco.numero)
-        cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
+        cy.get('input[name="address-number"]').type(deliver.adress.number)
+        cy.get('input[name="address-details"]').type(deliver.adress.details)
 
-        cy.get('input[name="address"]').should('have.value',entregador.endereco.rua)
-        cy.get('input[name="district"]').should('have.value',entregador.endereco.bairro)
-        cy.get('input[name="city-uf"]').should('have.value',entregador.endereco.cidade_uf)
+        cy.get('input[name="address"]').should('have.value',deliver.adress.street)
+        cy.get('input[name="district"]').should('have.value',deliver.adress.district)
+        cy.get('input[name="city-uf"]').should('have.value',deliver.adress.city_state)
 
-        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+        cy.contains('.delivery-method li', deliver.delivery_method).click()
 
-        cy.get('input[accept^="image"]').attachFile('/images/'+entregador.cnh)
+        cy.get('input[accept^="image"]').attachFile('/images/'+deliver.cnh)
 
         cy.get('form button[type="submit"]').click()
 
@@ -60,41 +60,43 @@ describe('Cadastro',()=>{
         cy.get('a[href="/deliver"]').click()
         cy.get('#page-deliver form h1').should('have.text','Cadastre-se para  fazer entregas')
 
-        var entregador={
-            nome:'Fernando Papito',
+        var deliver={
+            name:'Fernando Papito',
             cpf:'00000014141AA',
             email:'papito@hotmail.com',
             whatsapp:'11999999999',
-            endereco:{
-                cep:'13031740',
-                rua:'Rua Dois Córregos',
-                numero:'274',
-                complemento:'Casa',
-                bairro:'Jardim Dom Nery',
-                cidade_uf:'Campinas/SP'
+            adress:{
+                postalcode:'13031740',
+                street:'Rua Dois Córregos',
+                number:'274',
+                details:'Casa',
+                district:'Jardim Dom Nery',
+                city_state:'Campinas/SP'
             },
-            metodo_entrega:'Moto',
+            delivery_method:'Moto',
             cnh:'cnh-digital.jpg'
         }
+ 
+        cy.get('input[name="name"]').type(deliver.name)
+        cy.get('input[name="cpf"]').type(deliver.cpf)
+        cy.get('input[name="email"]').type(deliver.email)
+        cy.get('input[name="whatsapp"]').type(deliver.whatsapp)
 
-        cy.get('input[name="name"]').type(entregador.nome)
-        cy.get('input[name="cpf"]').type(entregador.cpf)
-        cy.get('input[name="email"]').type(entregador.email)
-        cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
-
-        cy.get('input[name="postalcode"').type(entregador.endereco.cep)
+        cy.get('input[name="postalcode"').type(deliver.adress.postalcode)
         cy.get('input[type=button][value="Buscar CEP"]').click()
 
-        cy.get('input[name="address-number"]').type(entregador.endereco.numero)
-        cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
+        cy.get('input[name="address-number"]').type(deliver.adress.number)
+        cy.get('input[name="address-details"]').type(deliver.adress.details)
 
-        cy.get('input[name="address"]').should('have.value',entregador.endereco.rua)
-        cy.get('input[name="district"]').should('have.value',entregador.endereco.bairro)
-        cy.get('input[name="city-uf"]').should('have.value',entregador.endereco.cidade_uf)
+        cy.get('input[name="address"]').should('have.value',deliver.adress.street)
+        cy.get('input[name="district"]').should('have.value',deliver.adress.district)
+        cy.get('input[name="city-uf"]').should('have.value',deliver.adress.city_state)
 
-        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+        cy.contains('.delivery-method li', deliver.delivery_method).click()
 
-        cy.get('input[accept^="image"]').attachFile('/images/'+entregador.cnh)
+
+
+        cy.get('input[accept^="image"]').attachFile('/images/'+deliver.cnh)
 
         cy.get('form button[type="submit"]').click()
 
