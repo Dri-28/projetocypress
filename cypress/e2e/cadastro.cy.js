@@ -1,8 +1,8 @@
-import SignupPage from '../pages/SignupPage'
+import signup from '../pages/SignupPage'
 
 describe('Cadastro',()=>{
     it('Usuário deve s tornar um entregador',()=>{
-     
+        
         var deliver={
             name:'Fernando Papito',
             cpf:'00000014141',
@@ -20,7 +20,7 @@ describe('Cadastro',()=>{
             cnh:'cnh-digital.jpg'
         }
 
-        var signup= new SignupPage();
+       
 
         signup.go();
         signup.fillForm(deliver);
@@ -48,7 +48,7 @@ describe('Cadastro',()=>{
             cnh:'cnh-digital.jpg'
         }
 
-        var signup= new SignupPage();
+        
 
         signup.go();
         signup.fillForm(deliver);
