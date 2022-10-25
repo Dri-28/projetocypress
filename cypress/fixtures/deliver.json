@@ -30,6 +30,22 @@
     },
     "delivery_method":"Moto",
     "cnh":"cnh-digital.jpg"
+},
+"email_inv": {
+    "name":"Fernando Papito",
+    "cpf":"00000014141",
+    "email":"papito.com.br",
+    "whatsapp":"11999999999",
+    "adress":{
+        "postalcode":"13031740",
+        "street":"Rua Dois Córregos",
+        "number":"274",
+        "details":"Casa",
+        "district":"Jardim Dom Nery",
+        "city_state":"Campinas/SP"
+    },
+    "delivery_method":"Moto",
+    "cnh":"cnh-digital.jpg"
 }
 
 }
