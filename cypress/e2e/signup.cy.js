@@ -1,8 +1,11 @@
 
-import signup from '../pages/SignupPage'
-import signupFactory from '../factories/SignupFactory'
+import signup from '../pages/signupPage'
+import signupFactory from '../factories/signupFactory'
+//import { it } from 'faker/lib/locales'
+//import signup from '../pages/signupPage'
 
-describe('Signup', () => {
+
+describe('signup', () => {
 
 /*     beforeEach(function () {
         cy.fixture('deliver').then((d) => {
@@ -10,7 +13,7 @@ describe('Signup', () => {
 
         })
     }) */
-    it('User should be deliver', function () {
+    it.skip('User should be deliver', function () {
 
         var deliver= signupFactory.deliver()
 
@@ -22,7 +25,7 @@ describe('Signup', () => {
 
     })
 
-    it('Incorret document', function() {
+    it.skip('Incorret document', function() {
 
         var deliver= signupFactory.deliver()
 
@@ -34,7 +37,7 @@ describe('Signup', () => {
         signup.alertMessageShouldBe('Oops! CPF inválido')
     })
 
-    it('Incorret document', function() {
+    it.skip('Incorret document', function() {
 
         var deliver= signupFactory.deliver()
 
@@ -45,4 +48,17 @@ describe('Signup', () => {
         signup.submit();
         signup.alertMessageShouldBe('Oops! Email com formato inválido.')
     })
+
+     it('Required fields', function(){
+        signup.go()
+         signup.submit()
+         signup.alertMessageShouldBe('É necessário informar o nome')
+         signup.alertMessageShouldBe('É necessário informar o CPF')
+         signup.alertMessageShouldBe('É necessário informar o email')
+         signup.alertMessageShouldBe('É necessário informar o CEP')
+         signup.alertMessageShouldBe('É necessário informar o número do endereço')
+         signup.alertMessageShouldBe('Selecione o método de entrega')
+         signup.alertMessageShouldBe('Adicione uma foto da sua CNH')
+
+     })
 })
